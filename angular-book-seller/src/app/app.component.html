@@ -1,8 +1,30 @@
-<img
-  width="40"
-  alt="Angular logo"
-  src="data:"
-/>
-Hello world!
+<div class="navbar navbar-expand navbar-dark bg-dark">
+  <a href="https://angular.io" class="navbar-brand ms-1">
+    <img
+      width="40"
+      alt="Angular logo"
+      src="{{logo}}"
+    />
+    Angular
+  </a>
+
+  <div class="navbar-nav me auto">
+    <li class="nav-item">
+      <a [routerLink]="['/admin']" routerLinkActive="active" class="nav-link">Admin</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="['/home']" routerLinkActive="active" class="nav-link">Home</a>
+    </li>
+  </div>
+
+  <div class="navbar-nav ms-auto">
+    <li class="nav-item">
+      <a [routerLink]="['/login']" routerLinkActive="active" class="nav-link">Sing Up</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="['/register']" routerLinkActive="active" class="nav-link">Sing In</a>
+    </li>
+  </div>
+</div>
 
 <router-outlet></router-outlet>
