@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PurchaseItem } from 'src/app/models/purchaseItem.model';
+import { PurchaseService } from 'src/app/services/purchase.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  purchaseItemList: Array<PurchaseItem> = [];
+  
+  constructor(private purchaseService: PurchaseService) { }
 
   ngOnInit(): void {
+    this.purchaseService.getAllPurchaseItems().subscribe(data => {
+      this.purchaseItemList = data;
+    })
   }
 
 }
