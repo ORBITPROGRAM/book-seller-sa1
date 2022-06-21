@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "config": "node set-env.js",
+    "start": "node server.js",
+    "back-up": "ng serve",
     "build": "ng build",
+    "build-prod": "$(npm bin)/ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -24,6 +27,8 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "bootstrap": "^5.1.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
     "jquery": "^3.6.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
